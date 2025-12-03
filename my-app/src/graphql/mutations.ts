@@ -1,6 +1,7 @@
-import { gql } from "@apollo/client";
-
-export const CREATE_POLL = gql`
+import { gql } 
+from 
+  "@apollo/client";
+export const CREATE_POLL = gql `
   mutation CreatePoll($question: String!, $options: [String!]!) {
     createPoll(question: $question, options: $options) {
       question
@@ -9,13 +10,12 @@ export const CREATE_POLL = gql`
     }
   }
 `;
-
-export const VOTE = gql`
+export const VOTE = gql `
   mutation Vote($optionIndex: Int!) {
     vote(optionIndex: $optionIndex) {
       question
       options
       votes
-    }
-  }
+}
+}
 `;
