@@ -17,7 +17,7 @@ const pollSlice = createSlice({
   name: "poll",
   initialState,
   reducers: {
-    setPoll: (state, action: PayloadAction<PollState>) => action.payload,
+    setPoll: (_state, action: PayloadAction<PollState>) => action.payload,
   },
 });
 
