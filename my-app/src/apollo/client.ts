@@ -4,12 +4,12 @@ import { createClient } from "graphql-ws";
 import { getMainDefinition } from "@apollo/client/utilities";
 
 const httpLink = new HttpLink({
-  uri: "http://localhost:4000/graphql",
+  uri: "https://alx-project-nexus-3d53.onrender.com/graphql",
 });
 
 const wsLink = new GraphQLWsLink(
   createClient({
-    url: "ws://localhost:4000/graphql",
+    url: "wss://alx-project-nexus-3d53.onrender.com/graphql",
   })
 );
 

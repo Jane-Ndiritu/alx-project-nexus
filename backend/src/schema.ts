@@ -17,6 +17,6 @@ export const typeDefs = gql`
   }
 
   type Subscription {
-    pollUpdated: Poll
-  }
+    pollUpdated: Poll
+  }
 `;
