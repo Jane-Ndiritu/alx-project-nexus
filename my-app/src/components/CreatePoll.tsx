@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client/react";
 import { CREATE_POLL } from "../graphql/mutations";
 
 export default function CreatePoll() {
@@ -32,7 +32,7 @@ export default function CreatePoll() {
           key={i}
           value={opt}
           onChange={(e) => updateOption(i, e.target.value)}
-          placeholder={Option ${i + 1}}
+          placeholder={`Option ${i + 1}`}
         />
       ))}
 

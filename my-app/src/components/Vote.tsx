@@ -1,11 +1,15 @@
-src/components/Vote.tsx:
-import { useSubscription, useMutation } from "@apollo/client";
-import { POLL_UPDATED } from "../graphql/subscriptions";
+import { useSubscription, useMutation } from "@apollo/client/react";
 import { VOTE } from "../graphql/mutations";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { POLL_UPDATED } from "../graphql/subsriptions";
 
+interface Poll {
+  question: string;
+  options: string[];
+  votes: number[];
+}
 export default function Vote() {
-  const { data } = useSubscription(POLL_UPDATED);
+  const { data } = useSubscription<{ pollUpdated: Poll }>(POLL_UPDATED);
   const [voteMutation] = useMutation(VOTE);
 
   const poll = data?.pollUpdated;

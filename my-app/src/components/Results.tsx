@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
+import type { RootState } from "../redux/store";
 
 export default function Results() {
   const poll = useSelector((state: RootState) => state.poll);
